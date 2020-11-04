@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+  <title>MúsicosChile Registro</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="css/estilos.css">
+
+  <script>
+    function validacion() //Funcion para validar datos correctos en el registro
+    {
+        nom= document.getElementById('nombres').value;
+        ape= document.getElementById('apellidos').value;
+        ed= document.getElementById('edad').value; 
+        usu= document.getElementById('usuario').value;
+        con= document.getElementById('contraseña').value;
+        cel = document.getElementById('celular').value;
+        cor = document.getElementById('correo').value;
+        ubicacion = document.getElementById('opciones').selectedIndex;
+        
+
+        if(nom == null || nom.length==0 || /^\s+$/.test(nom))
+        {
+            alert('Error.. debe ingresar sus nombres');
+            document.datos.nom.focus();
+            return false;
+        }
+        if(ape == null || ape.length==0 || /^\s+$/.test(ape))
+        {
+            alert('Error.. debe ingresar sus apellidos');
+            document.datos.ape.focus();
+            return false;
+        }
+        
+        if(isNaN(ed) || ed.length == 0)
+         {
+            alert('Error...debe ingresar una edad válida');
+            document.datos.ed.focus();
+            return false;
+        }
+        if(usu == null || usu.length==0 || /^\s+$/.test(usu))
+        {
+            alert('Error.. debe ingresar su nombre de usuario');
+            document.datos.usu.focus();
+            return false;
+        }
+        if(con == null || con.length==0 || /^\s+$/.test(con))
+        {
+            alert('Error.. debe ingresar su contraseña');
+            document.datos.con.focus();
+            return false;
+        }
+        if(!(/^\d{9}$/.test(cel)) )
+        {
+            alert('Error...debe ingresar un teléfono válido');
+            document.datos.cel.focus();
+            return false;
+        }    
+          
+        if(cor == null || cor.length==0 || /^\s+$/.test(cor))
+        {
+            alert('Error.. debe ingresar su correo electronico');
+            document.datos.cor.focus();
+            return false;
+        }
+
+        if (ubicacion == null || ubicacion == 0)
+        {
+            alert('Seleccione una region');
+            document.datos.opciones.focus();
+            return false;
+        }
+        else
+        {
+          return true; 
+        }
+    }
+</script>
+</head>
+<br>
+<body>
+  <div id="cajadatos"> <!--Portada y logo de la pagina-->
+    <img src="Imagenes/Logo4.jpg" width="100%">
+  </div> 
+  <br>
+    <div id="cajadatos"> <!--Menu de las opciones inicio, perfil, buscar, y registro-->
+      <div class="row">
+         <div class="col-lg-3">
+           <a href="MusicosChile Inicio.html" target="_self">
+            <img src="Imagenes/boton inicio 2.png" width="100%" height="60px">
+           </a>
+         </div>
+         <div class="col-lg-3">
+          <a href="MúsicosChile Perfil.html" target="_self">
+            <img src="Imagenes/Boton perfil 2.png" width="100%" height="60px">
+          </a>
+         </div>
+         <div class="col-lg-3">
+          <a href="MusicosChile Buscar.html" target="_self">
+            <img src="Imagenes/Boton buscar 2.png" width="100%" height="60px">
+          </a>
+         </div>
+         <div class="col-lg-3">
+          <a href="MúsicosChile Registro.html" target="_self">
+            <img src="Imagenes/Boton registro 2.png" width="100%" height="60px">
+          </a>
+         </div>
+      </div>
+    </div> 
+
+    <div id="cajadatos"> <!--Caja para registrarse como usuario-->
+      <h1>Registro</h1>
+      <form action="index.html" method="post" name="datos" onsubmit="return validacion()">
+        <div class="row">
+            <div class="col-lg-4"  style="background-color:#3c9cdb">
+              <label for ="nombres">Nombres</label>
+              <input type="text" name "nombres" id ="nombres" placeholder="Ingresar nombres">
+              <br>
+              <br>
+              <label for ="apellidos">Apellidos</label>
+              <br>
+              <input type="text" name "apellidos" id ="apellidos" placeholder="Ingresar apellidos">
+              <br>
+              <br>
+              <label for ="edad">Edad</label>
+              <br>
+              <input type="text" name "edad" id ="edad"placeholder="Ingresar edad">
+              <br>
+              <br>
+            </div>
+                
+            <div class="col-lg-4"  style="background-color:#3c9cdb">
+              <label for ="nombre de usuario">Nombre de usuario</label>
+              <br>
+              <input type="text" name "usuario" id="usuario" placeholder="Ingresar usuario">
+              <br>
+              <br>
+              <label for ="contraseña">Contraseña</label>
+              <br>
+              <input type="password" name "contraseña" id="contraseña" placeholder="Ingresar contraseña">
+              <br>
+              <br>
+              <label for ="Telefono celular">Teléfono celular</label>
+              <br>
+              <input type="text" name "celular" id="celular" placeholder="Ingresar celular">
+              <br>
+              <br>
+            </div>
+
+            <div class="col-lg-4"  style="background-color:#3c9cdb">
+              <label for ="Correo">Correo electrónico</label>
+              <br>
+              <input type="email" name "correo" id="correo" placeholder="Ingresar correo">
+              <br>
+              <br>
+              <label for="opcion">Region</label>
+              <select id="opciones" name="opcion">
+                <option value="">- Selecciona una opción -</option>
+                <option value="1">I Región</option>
+                <option value="2">II Región</option>
+                <option value="3">III Región</option>
+                <option value="4">IV Región</option>
+                <option value="5">V Región</option>
+                <option value="6">VI Región</option>
+                <option value="7">VII Región</option>
+                <option value="8">VIII Región</option>
+                <option value="9">IX Región</option>
+                <option value="10">X Región</option>
+                <option value="11">XI Región</option>
+                <option value="12">XII Región</option>
+                <option value="13">Region Metropolitana</option>
+                <option value="14">XIV Región</option>
+                <option value="15">XV Región</option>
+                <option value="16">XVI Región</option>
+              </select>
+               <br>
+               <br>
+            </div>
+          
+        </div>
+        <br>
+        <button type="submit">Enviar datos</button>
+        <button>Salir</button>
+      </form>
+    </div>
+  
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+<head>
+  <title>MúsicosChile Perfil</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="css/estilos.css">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/carousel.css" rel="stylesheet">
+
+
+  <style>
+    body
+    {
+      background-color: #141414;
+      padding: 30px;
+    }
+  </style>
+    <script>
+      function Ingresar() //Finción para iniciar sesión con nombre de usuario y contraseña
+      {
+        var usu;
+        var con; 
+ 
+        usu = document.getElementById('usuario').value;
+        con = document.getElementById('contraseña').value;
+
+        if(usu==null || usu.length==0)
+        {
+          alert('Debe ingresar su nombre de usuario ');
+        }
+        if(con==null || con.length==0)
+        {
+          alert('Debe ingresar su contraseña ');
+        }
+        else
+        {
+          alert('Hola '+ usu + ', Bienvenido a Músicos Chile');
+        }
+      }
+      function Salir() //Función para cerrar sesión
+      {
+        alert('Usted ha cerrado la sesion');
+      }
+      
+      function MensajesRecibidos() //Función para ver mensajes recibidos
+      {
+        var cantidad1=3;  
+        var i=0;
+        var usuario1='Sebastian_09';
+        var mensaje1='Hola soy Sebastian y necesito un guitarrista para mi banda';
+        var fecha1='12/06/2020';
+
+        document.write('Cantidad de Mensajes recibidos: ' + cantidad1);
+        document.write('<br>');
+        document.write('<hr>');
+
+        for (i=1; i<=cantidad1; i++)
+        {
+          document.write('Mensaje N°: ' + i); 
+          document.write('<br>'); 
+          document.write('Usuario: ' + usuario1);
+          document.write('<br>');
+          document.write('Mensaje: ' + mensaje1);
+          document.write('<br>');
+          document.write('Fecha: '+ fecha1);
+          document.write('<hr>');
+        }
+      }
+      function MensajesEnviados() //Funcion para ver mensajes enviados
+      {
+        var cantidad2=3; 
+        var i=1;  
+        var contador2=0;
+        var usuario2='Juan_33';
+        var mensaje2='Hola soy Felipe necesito banda para poder tocar piano, teclado, o guitara';
+        var respuesta2='No respondido aun'
+        var fecha2='24/07/2020';
+
+        document.write('Cantidad de Mensajes enviados: ' + cantidad2);
+        document.write('<br>');
+        document.write('<hr>');
+
+        while(i<=cantidad2)
+        {
+          document.write('Mensaje N°: ' + i); 
+          document.write('<br>'); 
+          document.write('Usuario: ' + usuario2);
+          document.write('<br>');
+          document.write('Mensaje: ' + mensaje2);
+          document.write('<br>');
+          document.write('Respuesta: ' + respuesta2);
+          document.write('<br>');
+          document.write('Fecha: '+ fecha2);
+          document.write('<hr>');
+          i++;
+        }
+      }
+      
+    </script>
+</head>
+<body>
+    <div id="cajadatos"> <!--Portada y logo de la pagina-->
+      <img src="Imagenes/Logo4.jpg" width="100%">
+    </div> 
+      <br>
+
+      <nav> <!--Menu de las opciones inicio, perfil, buscar, y registro-->
+      <div id="cajadatos">
+        <div class="row">
+           <div class="col-lg-3">
+             <a href="MusicosChile Inicio.html" target="_self">
+              <img src="Imagenes/boton inicio 2.png" width="100%" height="60px">
+             </a>
+           </div>
+           <div class="col-lg-3">
+            <a href="MúsicosChile Perfil.html" target="_self">
+              <img src="Imagenes/Boton perfil 2.png" width="100%" height="60px">
+            </a>
+           </div>
+           <div class="col-lg-3">
+            <a href="MusicosChile Buscar.html" target="_self">
+              <img src="Imagenes/Boton buscar 2.png" width="100%" height="60px">
+            </a>
+           </div>
+           <div class="col-lg-3">
+            <a href="MúsicosChile Registro.html" target="_self">
+              <img src="Imagenes/Boton registro 2.png" width="100%" height="60px">
+            </a>
+           </div>
+        </div>
+      </div> 
+      </nav>
+
+      <div id="cajadatos" width="60%">  <!--Caja de inicio de sesión y mensajes-->
+        <h1>Iniciar sesión</h1> 
+  
+        <div class="row">
+            <div class="col-lg-4"  style="background-color:#3c9cdb">
+                <br>
+                <div id="cajaimagen">
+                  <img src="Imagenes/Perfil2.jpg" width="100%">
+                </div>
+                <br><br>
+            </div>
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+            <label>Nombre de usuario</label>
+            <input type="text" name "usuario" id="usuario" placeholder="Ingresar usuario">
+            <label>Contraseña</label>
+            <input type="password" name "contraseña" id="contraseña" placeholder="Ingresar contraseña">
+            <br><br>
+            <button onclick="Ingresar()">Ingresar</button>
+            <button onclick="Salir()">Salir</button>
+          </div>
+          
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+            <br>
+            <button onclick="MensajesRecibidos()">Mensajes recibidos</button>
+            <button onclick="MensajesEnviados()">Mensajes enviados</button>
+            <div id="cajadatos4">
+            </div> 
+            <button>Redactar mensaje</button>
+            <br><br>
+          </div>
+        </div>
+      </div>  
+      
+
+      <div id="cajadatos">  <!--Carrusel con fotos e info de los usuarios favoritos-->
+        <h1>Usuarios Favoritos</h1>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+            <div class="container">
+              <div class="carousel-caption text-left">
+                  <img src="Imagenes/musico2.jpg" width="42%">
+                  <h2>Cristobal 23 Años</h2>
+                  <p>Cristobal esta encaminado para los grandes eventos, junto a su amada guitarra.</p>
+                  <p><a class="btn btn-lg btn-primary" href="#" role="button">contactar</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+            <div class="container">
+              <div class="carousel-caption">
+                  <img src="Imagenes/musico1.jpg" width="50%">
+                  <h2>Juan 26 Años</h2>
+                  <p>Juan es un buen guitarrista, toca para la banda creada por sus amigos.</p>
+                  <p><a class="btn btn-lg btn-primary" href="#" role="button">contactar</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+            <div class="container">
+              <div class="carousel-caption text-right">
+                  <img src="Imagenes/musico3.jpg" width="45%">
+                  <h2>Emilio 37 Años</h2>
+                  <p>Emilio es un artista del violonchelo, hace clases particulares de este instrumento.  </p>
+                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Contactar</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+      
+      <div id="cajadatos"> <!--Caja de novedades como videos nuevos-->
+        <h1>Novedades</h1>
+  
+        <div class="row">
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+                  <br>
+                  <label>Usuarios nuevos</label>
+                  <div id="cajaimagen">
+                    <img src="Imagenes/Usuarios nuevos.jpg" width="100%">
+                  </div>
+                  <br>
+          </div>
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+                  <br>
+                  <label>Videos nuevos</label>
+                  <div id="cajaimagen"> 
+                    <img src="Imagenes/videos nuevos 2.jpg" width="80%">
+                  </div>
+                  <br>
+          </div>
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+                  <br>
+                  <label>Temas nuevos</label>
+                  <div id="cajaimagen">
+                    <img src="Imagenes/Temas nuevos.jpg" width="100%">
+                  </div>
+                  <br>
+          </div>
+        </div>
+      </div> 
+
+      <br>
+      
+      <footer> <!--Footer con las opciones contactanos, redes sociales, manual, y acerca de nosotros-->
+        <div id="cajadatos">
+          <div class="row">
+             <div class="col-lg-3">
+              <button onclick="">Contactanos</button>
+             </div>
+             <div class="col-lg-3">
+              <button>Redes sociales</button>
+             </div>
+             <div class="col-lg-3">
+              <button>Manual</button>
+             </div>
+             <div class="col-lg-3">
+              <button>Acerca de nosotros</button>
+             </div>
+          </div>
+        </div> 
+      </footer>
+
+      
+</body>
+
+</html>
+      
