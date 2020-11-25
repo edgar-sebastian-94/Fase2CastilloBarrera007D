@@ -1,15 +1,15 @@
 
 body
 {
-       background-color: #141414;
+       background-color: #111111;
        padding: 30px;
 }
 #cajadatos 
 {
        border-style: groove;
-       border-width: 5px;
+       border-width: 0px;
        border-color:  rgb(136, 136, 136);
-       background-color: rgb(0, 51, 146);
+       background-color: rgb(0, 48, 136);
        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
        font-size: 20px;
        padding: 20px;
@@ -22,7 +22,7 @@ body
 {
        border-style: solid;
        border-width: 2px;
-       border-color:  rgb(0, 51, 146);
+       border-color:   rgb(0, 48, 136);
        background-color: rgb(255, 255, 255);
        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
        font-size: 22px;
@@ -36,7 +36,7 @@ body
 {
        border-style: solid;
        border-width: 2px;
-       border-color:  rgb(0, 51, 146);
+       border-color:   rgb(0, 48, 136);
        background-color: rgb(255, 255, 255);
        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
        font-size: 22px;
@@ -50,7 +50,7 @@ body
 {
        border-style: solid;
        border-width: 2px;
-       border-color:  rgb(0, 51, 146);
+       border-color:  rgb(0, 48, 136);
        background-color: rgb(255, 255, 255);
        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
        font-size: 22px;
@@ -66,7 +66,7 @@ body
        border-width: 5px;
        border-color:  rgb(221, 55, 25);
        background-color: rgb(255, 255, 255);
-       padding: 2px;
+       padding: 0px;
        float:unset;
 }
 #cajamapa
@@ -91,7 +91,7 @@ button
 {
        border-style: ridge;
        border-width: 3px;
-       border-color:  rgb(0, 51, 146);
+       border-color:   rgb(0, 48, 136);
        background-color: rgb(230, 230, 230);
        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
        font-size: 22px;
@@ -106,7 +106,7 @@ input
 {
        border-style: solid;
        border-width: 2px;
-       border-color:  rgb(0, 51, 146);
+       border-color:  rgb(0, 48, 136);
        background-color: rgb(255, 255, 255);
        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
        font-size: 22px;
@@ -130,7 +130,7 @@ select
 {
        border-style: solid;
        border-width: 2px;
-       border-color:  rgb(0, 51, 146);
+       border-color:   rgb(0, 48, 136);
        background-color: rgb(255, 255, 255);
        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
        font-size: 22px;
