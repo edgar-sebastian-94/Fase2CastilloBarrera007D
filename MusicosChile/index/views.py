@@ -2,7 +2,9 @@ from django.shortcuts import render
 from . models import Musico, Mensaje
 from django.views import generic
 
-# Create your views here.
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
 def index(request):
     
 
@@ -66,6 +68,42 @@ def registro(request):
 
         
     )    
+
+class CrearMusico(CreateView):
+    model = Musico
+    fields = '__all__'
+    success_url = reverse_lazy('index')
+
+class ActualizarMusico(UpdateView):
+    model = Musico
+    fields = '__all__'
+    success_url = reverse_lazy('index')
+
+class EliminarMusico(DeleteView):
+    model = Musico
+    success_url = reverse_lazy('index')
+
+class ConsultarMusico(generic.DetailView):
+    model=Musico   
+
+ 
+class CrearMensaje(CreateView):
+    model = Mensaje
+    fields = '__all__'
+    success_url = reverse_lazy('index')
+
+class ActualizarMensaje(UpdateView):
+    model = Mensaje
+    fields = '__all__'
+    success_url = reverse_lazy('index')
+
+class EliminarMensaje(DeleteView):
+    model = Mensaje
+    fields = '__all__'
+    success_url = reverse_lazy('index')
+
+class ConsultarMensaje(generic.DetailView):
+    model=Mensaje     
 
 
 
