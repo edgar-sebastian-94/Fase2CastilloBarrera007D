@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="cajadatos">
+<h1>Inicio de sesion</h1>
+
+<div style="background-color:#3c9cdb" style="text-align: center">
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Ingresar</button>
+</form>
+<br>
+</div>  
+</div>
+{% endblock %}
