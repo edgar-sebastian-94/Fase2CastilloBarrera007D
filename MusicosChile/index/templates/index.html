@@ -74,7 +74,7 @@
       </div>
     </div> 
     <br>
-    
+    {% if user.is_superuser %}
     <div id="cajadatos" width="60%">
       <h1>Administración de base de datos</h1> 
     
@@ -199,7 +199,8 @@
     </div>
   </div>
     <br>
-    
+    {% else %}
+{% endif %}
 <div id="cajadatos">  <!--Carrusel con fotos e info de los usuarios favoritos-->
   <h1>Usuarios Favoritos</h1>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">

@@ -27,7 +27,6 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('index/', include('index.urls')),
@@ -36,6 +35,8 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html'), name='ind'),
     
 ]
+
+
 
 urlpatterns = [
     path('', include(router.urls)),
