@@ -10,12 +10,13 @@ def index(request):
 
     num_Musicos = Musico.objects.all().count()
     num_Mensajes = Mensaje.objects.all().count()
-
+    mensajes_enviados = Mensaje.objects.values_list()
+    mensajes_recibidos = Mensaje.objects.all().values_list()
 
     return render(
         request,
         'index.html',
-        context={'num_musicos': num_Musicos, 'num_mensajes': num_Mensajes, 
+        context={'num_musicos': num_Musicos, 'num_mensajes': num_Mensajes, 'men_enviados': mensajes_enviados, 'men_recibidos': mensajes_recibidos, 
         },
 
         
