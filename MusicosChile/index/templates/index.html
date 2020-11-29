@@ -2,7 +2,8 @@
 
 {% block content %}
 
-{% if user.is_authenticated  %}
+{% if user.is_authenticated %}
+
 <div id="cajadatos" width="60%">  <!--Caja de inicio de sesión y mensajes-->
       <h1>Bienvenido {{ user.get_username }}</h1> 
     
@@ -23,27 +24,29 @@
 
           <div class="col-lg-4"  style="background-color:#3c9cdb">
             
+            <h1>Mensajes</h1>
             <br>
-            <div id="cajadatos4" style="height: 400px;">
+            <div id="cajadatos4" style="height: 300px;">
               <li><strong>Mensajes enviados:</strong> <br> {{ men_enviados }}</li>
               
             </div> 
             <br>
           </div>
          
+
   
           <div class="col-lg-4"  style="background-color:#3c9cdb">
-            
+            <h1>Cantidad de registros</h1>
             <br>
-            <div id="cajadatos4" style="height: 400px;">
-              <li><strong>Mensajes recibidos:</strong> <br> {{ men_recibidos }}</li>
+            <div id="cajadatos4" style="height: 300px;">
               
+            <li><strong>Musicos:</strong> {{ num_musicos }}</li>
+            <li><strong>Mensajes:</strong> {{ num_mensajes }}</li>
+            
+            </ul>
+    
             </div>
             <br> 
-          </div>
-  
-          <div class="col-lg-4"  style="background-color:#3c9cdb">
-          
           </div>
         <!--
         <div class="col-lg-4"  style="background-color:#3c9cdb">
@@ -88,7 +91,7 @@
             {
               nom= document.getElementById('nombre_usuario').value;
               dir = "musico/"+nom+"/update/";
-              alert(dir);
+              /*alert(dir);*/
               var str = "ir a la pagina";
               var result = str.link(dir);
               document.getElementById("demo").innerHTML = result;
@@ -98,7 +101,7 @@
             {
               nom= document.getElementById('nombre_usuario').value;
               dir = "musico/"+nom+"";
-              alert(dir);
+              /*alert(dir);*/
               var str = "ir a la pagina";
               var result = str.link(dir);
               document.getElementById("demo").innerHTML = result;
@@ -108,7 +111,7 @@
             {
               nom= document.getElementById('nombre_usuario').value;
               dir = "musico/"+nom+"/delete/";
-              alert(dir);
+              /*alert(dir);*/
               var str = "ir a la pagina";
               var result = str.link(dir);
               document.getElementById("demo").innerHTML = result;
@@ -138,7 +141,7 @@
             {
               nom= document.getElementById('numero_mensaje').value;
               dir = "mensaje/"+nom+"/update/";
-              alert(dir);
+              /*alert(dir);*/
               var str = "ir a la pagina";
               var result = str.link(dir);
               document.getElementById("demo").innerHTML = result;
@@ -148,7 +151,7 @@
             {
               nom= document.getElementById('numero_mensaje').value;
               dir = "mensaje/"+nom+"";
-              alert(dir);
+              /*alert(dir);*/
               var str = "ir a la pagina";
               var result = str.link(dir);
               document.getElementById("demo").innerHTML = result;
@@ -158,7 +161,7 @@
             {
               nom= document.getElementById('numero_mensaje').value;
               dir = "mensaje/"+nom+"/delete/";
-              alert(dir);
+              /*alert(dir);*/
               var str = "ir a la pagina";
               var result = str.link(dir);
               document.getElementById("demo").innerHTML = result;

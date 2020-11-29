@@ -10,7 +10,7 @@ def index(request):
 
     num_Musicos = Musico.objects.all().count()
     num_Mensajes = Mensaje.objects.all().count()
-    mensajes_enviados = Mensaje.objects.values_list()
+    mensajes_enviados = Mensaje.objects.filter(usuario="seba_123").values()
     mensajes_recibidos = Mensaje.objects.all().values_list()
 
     return render(
