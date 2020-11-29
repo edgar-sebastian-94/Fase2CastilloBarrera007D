@@ -7,6 +7,8 @@ urlpatterns = [
     path('perfil/', views.perfil, name='perfil'),
     path('buscar/', views.buscar, name='buscar'),
     path('registro/', views.registro, name='registro'),
+    path('mensajes/', views.mensajes, name='mensajes'),
+    path('admin/', views.admin, name='admin'),
     path('musico/<str:pk>', views.ConsultarMusico.as_view(), name='consultar_musico'),
     path('mensaje/<str:pk>', views.ConsultarMensaje.as_view(), name='consultar_mensaje'),
     

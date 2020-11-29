@@ -2,41 +2,203 @@
 
 {% block content %}
 
+{% if user.is_authenticated  %}
 <div id="cajadatos" width="60%">  <!--Caja de inicio de sesión y mensajes-->
-  <h1>Bienvenido: </h1> 
-
-  <div class="row">
-      <div class="col-lg-4"  style="background-color:#3c9cdb">
-          <br>
-          <div id="cajaimagen">
-            {% load static %}
-            <img src="{% static 'images/Perfil2.jpg' %}" width="100%">
-            
-          </div>
-          <br><br>
-      </div>
-    <div class="col-lg-4"  style="background-color:#3c9cdb">
-      <label>Nombre de usuario</label>
-      <input type="text" name "usuario" id="usuario" placeholder="Ingresar usuario">
-      <label>Contraseña</label>
-      <input type="password" name "contraseña" id="contraseña" placeholder="Ingresar contraseña">
-      <br><br>
-      <button onclick="Ingresar()">Ingresar</button>
-      <button onclick="Salir()">Salir</button>
-    </div>
+      <h1>Bienvenido {{ user.get_username }}</h1> 
     
-    <div class="col-lg-4"  style="background-color:#3c9cdb">
-      <br>
-      <button onclick="MensajesRecibidos()">Mensajes recibidos</button>
-      <button onclick="MensajesEnviados()">Mensajes enviados</button>
-      <div id="cajadatos4">
-      </div> 
-      <button>Redactar mensaje</button>
-      <br><br>
+      <div class="row">
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+              <br>
+              <div id="cajaimagen">
+                {% load static %}
+                <img src="{% static 'images/Perfil2.jpg' %}" width="100%">
+                
+              </div>
+              <br>
+
+              <a href="mensaje/create/">
+                <button>Enviar mensaje</button>
+              </a>
+          </div>
+
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+            
+            <br>
+            <div id="cajadatos4" style="height: 400px;">
+              <li><strong>Mensajes enviados:</strong> <br> {{ men_enviados }}</li>
+              
+            </div> 
+            <br>
+          </div>
+         
+  
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+            
+            <br>
+            <div id="cajadatos4" style="height: 400px;">
+              <li><strong>Mensajes recibidos:</strong> <br> {{ mensajes.men_recibidos }}</li>
+            </div>
+            <br> 
+          </div>
+  
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+          
+          </div>
+        <!--
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <label>Nombre de usuario</label>
+          <input type="text" name "usuario" id="usuario" placeholder="Ingresar usuario">
+          <label>Contraseña</label>
+          <input type="password" name "contraseña" id="contraseña" placeholder="Ingresar contraseña">
+          <br><br>
+          <a href="{% url 'mensajes' %}">{% load static %}
+            <button onclick="Ingresar()">Mensajes</button>
+          </a>
+          {% if user.is_authenticated  %}
+          <a href="{% url 'admin' %}">{% load static %}
+            <button onclick="Ingresar()">Administración</button>
+          </a>
+          {% else %}
+          {% endif %}
+          <a href="musico/create/">
+            <button onclick="Ingresar()">Administrac</button>
+          </a>
+          
+        </div>
+        
+        <div class="col-lg-4"  style="background-color:#3c9cdb"></div>
+        <br>
+      -->
+        
+      </div>
+    </div> 
+    <br>
+    
+    <div id="cajadatos" width="60%">
+      <h1>Administración</h1> 
+    
+    <div class="row">
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <h1>CRUD Músicos</h1>
+          <br>
+        
+          <script>
+            function actualizar_musico()
+            {
+              nom= document.getElementById('nombre_usuario').value;
+              dir = "musico/"+nom+"/update/";
+              alert(dir);
+              var str = "ir a la pagina";
+              var result = str.link(dir);
+              document.getElementById("demo").innerHTML = result;
+              
+            }
+            function consultar_musico()
+            {
+              nom= document.getElementById('nombre_usuario').value;
+              dir = "musico/"+nom+"";
+              alert(dir);
+              var str = "ir a la pagina";
+              var result = str.link(dir);
+              document.getElementById("demo").innerHTML = result;
+              
+            }
+            function eliminar_musico()
+            {
+              nom= document.getElementById('nombre_usuario').value;
+              dir = "musico/"+nom+"/delete/";
+              alert(dir);
+              var str = "ir a la pagina";
+              var result = str.link(dir);
+              document.getElementById("demo").innerHTML = result;
+              
+            }
+          </script>
+
+          <input type="text" name "nombre_usuario" id ="nombre_usuario" placeholder="Ingresar usuario">
+          <br><br>
+        
+          <a href="musico/create/">
+            <button>Crear músico</button>
+          </a>
+          <button onclick="actualizar_musico()">Actualizar músico</button>
+          <button onclick="consultar_musico()">Consultar músico</button>
+          <button onclick="eliminar_musico()">Eliminar músico</button>
+          <br><br>
+          <p id="demo" style="background-color: rgb(255, 255, 255);"></p>
+
+        </div>
+            
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <h1>CRUD Mensajes</h1>
+          <br>
+          <script>
+            function actualizar_mensaje()
+            {
+              nom= document.getElementById('numero_mensaje').value;
+              dir = "mensaje/"+nom+"/update/";
+              alert(dir);
+              var str = "ir a la pagina";
+              var result = str.link(dir);
+              document.getElementById("demo").innerHTML = result;
+              
+            }
+            function consultar_mensaje()
+            {
+              nom= document.getElementById('numero_mensaje').value;
+              dir = "mensaje/"+nom+"";
+              alert(dir);
+              var str = "ir a la pagina";
+              var result = str.link(dir);
+              document.getElementById("demo").innerHTML = result;
+              
+            }
+            function eliminar_mensaje()
+            {
+              nom= document.getElementById('numero_mensaje').value;
+              dir = "mensaje/"+nom+"/delete/";
+              alert(dir);
+              var str = "ir a la pagina";
+              var result = str.link(dir);
+              document.getElementById("demo").innerHTML = result;
+              
+            }
+          </script>
+
+          <input type="text" name "numero_mensaje" id ="numero_mensaje" placeholder="Ingresar numero de mensaje">
+          <br><br>
+          
+          <a href="mensaje/create/">
+            <button>Crear mensaje</button>
+          </a>
+          <button onclick="actualizar_mensaje()">Actualizar mensaje</button>
+          <button onclick="consultar_mensaje()">Consultar mensaje</button>
+          <button onclick="eliminar_mensaje()">Eliminar mensaje</button>
+          <br><br>
+          <p id="demo" style="background-color: rgb(255, 255, 255);"></p>
+        
+        </div>
+       
+
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <h1>Cantidad de registros</h1>
+          <br>
+          <div id="cajadatos4" style="height: 400px;">
+            
+          <li><strong>Musicos:</strong> {{ num_musicos }}</li>
+          <li><strong>Mensajes:</strong> {{ num_mensajes }}</li>
+          
+          </ul>
+  
+          </div>
+          <br> 
+        </div>
+
+      
     </div>
   </div>
-</div> 
-<br>
+    <br>
+    
 <div id="cajadatos">  <!--Carrusel con fotos e info de los usuarios favoritos-->
   <h1>Usuarios Favoritos</h1>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -95,12 +257,16 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+{% else %}
+{% endif %}
 </div>
 
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
       
       <br>
+      
       <div id="cajadatos"> <!--Caja de novedades como videos nuevos-->
         <h1>Novedades</h1>
   

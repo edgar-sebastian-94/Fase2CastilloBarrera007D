@@ -91,6 +91,7 @@ class Musico(models.Model):
 class Mensaje(models.Model):
 	id = models.CharField(max_length=100, primary_key=True)
 	usuario = models.CharField(max_length=100)
+	
 	texto = models.CharField(max_length=100)
 	fecha = models.DateField(null=True, blank=True)
 

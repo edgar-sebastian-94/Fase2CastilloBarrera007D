@@ -1,15 +1,18 @@
 {%extends "base_generic.html"%}
 
 {%block content%}
-
+<div id="cajadatos">
+<h1>Detalles de Músico</h1>
+<br>
 <h1>Usuario: {{musico}}</h1>
 <h1>Nombres: {{musico.nombres}}</h1>
-<h1>Apellidos: {{musico.edad}}</h1>
+<h1>Apellidos: {{musico.apellidos}}</h1>
+<h1>Edad: {{musico.edad}}</h1>
 <h1>Contraseña: {{musico.contraseña}}</h1>
 <h1>Numero Celular: {{musico.celular}}</h1>
 <h1>Correo electronico: {{musico.correo}}</h1>
 <h1>Region: {{musico.region}}</h1>
-
+</div>
 <!--
 <div style="margin-left:20px;margin-top:20px">
 <h4>Books</h4>

@@ -1,12 +1,15 @@
 {%extends "base_generic.html"%}
 
 {%block content%}
-
-<h1>mensaje: {{mensaje.id}}</h1>
+<div id="cajadatos">
+<h1>Detalles de mensaje</h1>
+<br>
+<h1>mensaje N°: {{mensaje.id}}</h1>
 <h1>Usuario: {{mensaje.usuario}}</h1>
 <h1>Contenido: {{mensaje.texto}}</h1>
 <h1>Fecha: {{mensaje.fecha}}</h1>
 
+</div>
 
 <!--
 <div style="margin-left:20px;margin-top:20px">

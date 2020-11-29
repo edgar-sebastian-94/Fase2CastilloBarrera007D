@@ -40,35 +40,50 @@
     <nav> <!--Menu de las opciones inicio, perfil, buscar, y registro-->
     <div id="cajadatos">
       <div class="row">
-         <div class="col-lg-3">
+         <div class="col-lg-2">
           <a href="{% url 'index' %}">{% load static %}
             <img src="{% static 'images/Boton inicio 2.png' %}" width="100%" height="60px">
           </a>
 
          </div>
-         <div class="col-lg-3">
+         <div class="col-lg-2">
           <a href="{% url 'perfil' %}">{% load static %}
             <img src="{% static 'images/Boton perfil 2.png' %}" width="100%" height="60px">
           </a>
 
          </div>
-         <div class="col-lg-3">
+         <div class="col-lg-2">
           <a href="{% url 'buscar' %}">{% load static %}
             <img src="{% static 'images/Boton buscar 2.png' %}" width="100%" height="60px">
           </a>
           
          </div>
-         <div class="col-lg-3">
+         <div class="col-lg-2">
           <a href="{% url 'registro' %}">{% load static %}
             <img src="{% static 'images/Boton registro 2.png' %}" width="100%" height="60px">
           </a>
 
          </div>
+         {% if user.is_authenticated  %}
+         <div class="col-lg-4">
+          <a href="{% url 'logout' %}">{% load static %}
+            <button style="height: 60px; background-color: rgb(255, 255, 255); font-size: 30px;">Cerrar sesion</button>
+          </a>
+         </div>
+         {% else %}
+         <div class="col-lg-4">
+          <a href="{% url 'login' %}">{% load static %}
+            <button style="height: 60px; background-color: rgb(255, 255, 255); font-size: 30px;">Iniciar sesion</button>
+          </a>
+         </div>
+         {% endif %}
       </div>
     </div> 
     </nav>
     <br>
+    
       {% block content %}{% endblock %}
+      
     <br>  
       <footer> <!--Footer con las opciones contactanos, redes sociales, manual, y acerca de nosotros-->
         <div id="cajadatos">

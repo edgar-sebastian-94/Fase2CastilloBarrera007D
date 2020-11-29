@@ -67,7 +67,41 @@ def registro(request):
         },
 
         
+    ) 
+
+
+def mensajes(request):
+    
+    mensajes_enviados = Mensaje.objects.filter(usuario='seba_123').values_list()
+    mensajes_recibidos = Mensaje.objects.all().values()
+
+
+    return render(
+        request,
+        'mensajes.html',
+        context={'men_enviados': mensajes_enviados, 'men_recibidos': mensajes_recibidos, 
+        },
+
+        
+    )  
+    
+def admin(request):
+    
+
+    num_Musicos = Musico.objects.all().count()
+    num_Mensajes = Mensaje.objects.all().count()
+
+
+    return render(
+        request,
+        'admin.html',
+        context={'num_musicos': num_Musicos, 'num_mensajes': num_Mensajes, 
+        },
+
+        
     )    
+
+       
 
 class CrearMusico(CreateView):
     model = Musico
